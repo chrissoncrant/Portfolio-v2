@@ -1,8 +1,8 @@
 :root {
     --main-black: #21241E;
-    --main-white: #E4F5D0;
+    --main-white: #e8f3dc;
     --main-gray: #98A38B;
-    --primary-green: #9CF511;
+    --primary-green: #83cc0d;
     --dark-green: #72A81D;
     --blue: #2A63F5;
     --border: 1px solid black;
@@ -114,7 +114,13 @@ a {
     font-weight: 900;
     padding: 2rem;
     color: var(--main-white);
-    text-shadow: 1px 1px 4px var(--main-black);
+    text-shadow: 1px 1px 3px #2a63f5c5;
+    transition: background-color .2s ease-in-out;
+}
+
+.nav-list a:hover {
+    background-color: var(--blue);
+    transition: background-color .5s ease-in-out;
 }
 
 @media only screen and (max-width: 28.75em) {
@@ -132,6 +138,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 100%;
     height: 100vh;
     background-color: var(--main-gray);
@@ -139,7 +146,7 @@ a {
 }
 
 h1 {
-    font-size: 8rem;
+    font-size: 6rem;
     color: var(--main-white);
     text-shadow: 1px 1px 5px var(--main-gray);
 }
@@ -156,12 +163,11 @@ h1 {
 .projects-section {
     text-align: center;
     padding: 10rem 2rem;
-    background: var(--main-white);
+    background: #fd957d85;
 }
 
 h2 {
-    font-size: 4.2rem;
-    
+    font-size: 4.2rem;  
 }
 
 .projects-section-header {
@@ -183,23 +189,59 @@ h2 {
 }
 
 .project {
-    background: #98a38b94; 
+    background: #98a38b73; 
 }
 
 .project-tile {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     border: 0px solid black;
     border-radius: 3px;
     padding: 0.3rem;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.507);
+    box-shadow: 1px 1px 15px #2a63f53a;
+    transition: box-shadow ease-in 0.3s;
+}
+
+.project-tile:hover {
+    box-shadow: 4px 4px 10px #2a63f58c;
+    transition: box-shadow ease-in 0.3s;
 }
 
 .project-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2.5rem;
     font-weight: 900;
-    padding: 2rem 0.5rem;
-    border: 0px solid black;
+    padding: 1rem 0.5rem;
+    border: 0px solid red;
     color: var(--main-black);
+}
+
+@media only screen and (max-width: 30.625em) {
+    .projects-section {
+        padding: 6rem 1rem;
+    }
+
+    .projects-section-header {
+        font-size: 4rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.code {
+    color: #98a38b00;
+    padding: 0 0.5rem;
+    transition: color .5s ease-out;
+}
+
+.project:hover .code {
+    color: var(--blue);
+    transition: color .5s ease-out;
 }
 
 .btn {
@@ -209,9 +251,36 @@ h2 {
 }
 
 .btn-more-stuff {
-    background: var(--blue);
+    font-size: 2rem;
+    background-color: #98a38b73;
+    color: var(--main-black);
+    box-shadow: 1px 1px 15px #2a63f53a;
+    transition: 
+        background-color 0.2s ease-in,
+        color 0.5s ease-in;
+}
+
+.btn-more-stuff:hover {
+    background-color: var(--blue);
     color: var(--main-white);
 }
+
+
+.btn-more-stuff > i {
+    display: inline-block;
+    padding-left: 0.7rem;
+    transform: translateX(0);
+    transition: transform 0.5s ease-in;
+}
+
+.btn-more-stuff > i::after {
+    content: '>';
+}
+
+.btn-more-stuff:hover > i {
+    transform: translateX(5px);
+}
+
 
 .contact-section {
     display: flex;
@@ -224,6 +293,10 @@ h2 {
     padding: 0 2rem;
     color: var(--main-white);
     background: linear-gradient(62deg, #21241E, #98A38B);
+}
+
+.contact-section {
+    height: 100vh;
 }
 
 .contact-section-header h2 {
@@ -248,7 +321,15 @@ h2 {
     font-size: 2.4rem;
     font-weight: 900;
     text-shadow: 1px 1px 4px #15220754;
-    color: #72A81D;
+    color: #8acc1f;
+    transition: 
+        transform 0.3s ease-out,
+        text-shadow 0.3s ease-out;
+}
+
+.contact-details:hover {
+    transform: translateY(8px);
+    text-shadow: 1px -5px 4px #152207e7;
 }
 
 footer {
@@ -256,7 +337,7 @@ footer {
     justify-content: space-evenly;
     padding: 2rem;
     background: var(--primary-green);
-    text-shadow: 1px 1px 15px #21241ec0;
+    text-shadow: 1px 1px 20px #21241e7e;
     border-top: 2px solid var(--main-black);
 }
 
