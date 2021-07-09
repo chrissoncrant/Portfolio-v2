@@ -1,0 +1,125 @@
+:root {
+    --main-black: #21241E;
+    --main-white: #E4F5D0;
+    --main-gray: #98A38B;
+    --primary-green: #9CF511;
+    --dark-green: #72A81D;
+    --blue: #2A63F5;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    /* Set font size for easy rem calculations:
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px */
+   font-size: 62.5%;
+   scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 1.8rem
+    /*font-family: */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, 
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+/* 1200px/16px = 75em*/
+@media (max-width: 75em) {
+    html {
+        font-size: 60%;
+    }
+}
+
+/* 980px/16px = 61.25em */
+@media (max-width: 61.25em) {
+    html {
+        font-size: 58%;
+    }
+}
+
+/* 460px/16px = 28.75rem*/
+@media (max-width: 28.75rem) {
+    html {
+        font-size: 55%;
+    }
+}
+
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-list {
+    display: flex;
+    margin-right: 2rem;
+    list-style: none;
+}
+
+.nav-list li {
+    border: 0px solid black;
+}
+
+@media only screen and (max-width: 28.75em) {
+    #navbar {
+        justify-content: center;
+    }
+
+    .nav-list {
+        margin: 0 1rem;
+    }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 3rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.projects-section-header {
+    border: 0px solid black;
+}
+
+.project-tile {
+    display: block;
+    border: 0px solid black;
+    text-align: center;
+    padding: 2rem;
+}
+
+.project-title {
+    border: 0px solid black;
+}
+
+
